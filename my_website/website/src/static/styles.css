@@ -1,0 +1,345 @@
+.title {display: flex; }
+
+.title {
+	text-align: center;
+	animation-name: strobe;
+	flex:1;
+	animation: strobe 100ms steps(1,end) infinite;
+	transition:flex .3s;;
+	text-shadow: 0 0 3px #FF0000, 0 0 5px #FF00FF;
+	}
+
+.tasks {
+	text-align: center;
+	color: #0FE
+}
+
+body {
+	animation-name: back;
+	animation-duration: 8s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes back {
+	0% {background-color: red;}
+	20% {background-color: yellow;}
+	40% {background-color: blue;}
+	60% {background-color: green;}
+	80% {background-color: purple;}
+	100% {background-color: red;}
+}
+
+
+
+@keyframes header {
+	0% {color: yellow;}
+	20% {color: blue;}
+	40% {color: green;}
+	60% {color: purple;}
+	80% {color: red;}
+	100% {color: yellow;}
+}
+
+@keyframes strobe {
+	50% {color:black; color:white;}
+}
+
+.cheese-container {
+  height: 325px;  
+  margin: auto;
+  padding-top: 250px;
+  width: 325px;
+  
+  animation: boardRoll ease-in-out .5s infinite;
+}
+
+.top {
+  border-bottom: 0 solid transparent;
+  border-left: 300px solid #FFC15E;
+  border-top: 50px solid transparent;
+  height: 0;
+  margin: auto;
+  width: 0;
+}
+
+.top::before {
+  border-top: 50px solid transparent;
+  border-right: 50px solid transparent;
+  content: "";
+  display: block;
+  height: 0;
+  left: -300px;
+  position: relative;
+  top: -50px;
+  width: 0;
+}
+
+.bottom {
+  background-color: #FF9B42;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.1);
+  height: 100px;
+  margin: auto;
+  width: 300px;
+  overflow: hidden;
+}
+
+.hole {
+  background-color: #E15634;
+  border-radius: 100%;
+  height: 30px;
+  position: relative;
+  width: 30px;
+}
+
+.hole:first-child{
+  top: 25px;
+  left: 50px;
+}
+
+.hole:nth-child(2){
+  top: -25px;
+  left: -15px;
+}
+
+.hole:nth-child(3){
+  top: 25px;
+  left: -15px;
+}
+
+.hole:nth-child(4){
+  top: -15px;
+  left: 100px;
+}
+
+.hole:nth-child(5){
+  top: -115px;
+  left: 150px;
+}
+
+.hole:nth-child(6){
+  top: -100px;
+  left: 225px;
+}
+
+.hole:nth-child(7){
+  top: -180px;
+  left: 280px;
+}
+
+.deck{
+  background-color: #49BEAA;
+  border-radius: 50px;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.1);
+  height: 50px;
+  margin: 25px 0 auto -25px;
+  position: relative;
+  top: -50px;
+  width: 400px;
+  z-index: -1;
+}
+
+.wheel{
+  background-color: #333333;
+  border-radius: 100%;
+  box-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+  height: 35px;
+  position: relative;
+  width: 35px;
+  z-index: -5;
+
+}
+
+.wheel::after{
+  background-color:  rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  content: "";
+  display: block;
+  height: 10px;
+  margin: auto;
+  position: relative;
+  top: 11px;
+  width: 10px;
+  
+  animation: wheelRotate ease-in-out 2s infinite;
+}
+
+.board div:nth-child(2){
+  left: 50px;
+  top: -55px;
+}
+
+.board div:nth-child(3){
+  left: 250px;
+  top: -90px;
+}
+
+
+/* Animation */
+@keyframes boardRoll {
+  0% {
+    transform: translate(-100px, 0);
+  }
+  50% {
+    transform: translate(125px, 0);
+  }
+  90% {
+    transform: translate(-100px, 0);
+  }
+  100% {
+    transform: translate(-100px, 0);
+  }
+
+}
+
+
+@keyframes wheelRotate {
+  0% {
+    transform: rotate(0turn);
+  }
+  50% {
+    transform: rotate(1turn);
+  }
+  100% {
+    transform: rotate(-0.5turn);
+  }
+
+}
+
+.container{
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  left: calc(50% - 200px);
+  padding-top: 250px;
+}
+.emoticon{
+  width: 400px;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  border: 10px solid #000;
+  border-radius: 50%;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+.eyes{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 70px;
+  left: 119px;
+  background-color: #000;
+  border-radius: 50%;
+  box-shadow: 154px 0px 0px #000;
+}
+@keyframes animationMouth{
+  0%{
+    border-radius: 0;
+  }
+  90%{
+    border-radius: 50%;
+  }
+}
+.mouth{
+  width: 130px;
+  height: 200px;
+  position: absolute;
+  bottom: 50px;
+  right: 80px;
+  border: 10px solid #000;
+  border-top: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-radius: 50%;
+  animation: animationMouth 4s linear;
+}
+@keyframes animationGlasses{
+  0%{
+    opacity: 0;
+    top: 128px;
+    left: 328px;
+  }
+  10%{
+    opacity: 1;
+    top: 128px;
+    left: 328px;
+  }
+  30%{
+    opacity: 1;
+    top: 58px;
+    left: 328px;
+  }
+  50%{
+    opacity: 1;
+    top: 58px;
+    left: 328px;
+  }
+  80%{
+    opacity: 1;
+    top: 58px;
+    left: 108px;
+  }
+  100%{
+    opacity: 1;
+    top: 58px;
+    left: 108px;
+  }
+}
+.glasses{
+  width: 80px;
+  height: 70px;
+  position: absolute;
+  top: 58px;
+  left: 108px;
+  background-color: #000;
+  box-shadow: 145px 0px 0px #000;
+  animation: animationGlasses 4s linear;
+}
+.glasses:before {
+  content: "";
+  width: 70px;
+  height: 10px;
+  position: absolute;
+  top: 22px;
+  left: -80px;
+  background-color: #000;
+}
+.glasses:after {
+  content: "";
+  width: 10px;
+  height: 30px;
+  position: absolute;
+  top: 28px;
+  left: -80px;
+  background-color: #000;
+}
+@keyframes animationTitle{
+  0%{
+    opacity: 0;
+  }
+  90%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+h1{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 2.8em;
+  font-family: Verdana;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: -webkit-linear-gradient(rgb(0, 0, 0), rgb(88, 87, 87));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #000;
+  animation: animationTitle 4s linear;
+}

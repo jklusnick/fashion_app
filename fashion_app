@@ -1,0 +1,40 @@
+import random
+import string
+
+shoes = [
+	'Adidas',
+	'Chucks', 
+	'white Vans', 
+	'black Vans', 
+	'khaki Vans', 
+	'Nike slides'
+	]
+socks = [
+	'black',
+	'white'
+	]
+
+pants = [
+	'gray',
+	'black',
+	'green',
+	'khaki',
+	'jeans'
+	]
+
+shirts = [
+	'long sleeve',
+	'short sleeve'
+	]
+
+jacket = [
+	'Billabong hoodie',
+	'khaki jacket',
+	'black raincoat',
+	]
+
+if __name__ == "__main__":
+	cold = raw_input("Is it cold today Jake?")
+	if cold == "y":
+		print "Okay Jake, wear your " + random.choice(shoes) + "with " + random.choice(socks) + \
+		", " + random.choice(pants) + "your favorite " + random.choice(shirts) + "and your " + random.choice(jacket) + "."
